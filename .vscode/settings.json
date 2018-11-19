@@ -1,0 +1,13 @@
+{
+    "python.unitTest.cwd": "src/",
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py"
+    ],
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true,
+    "python.unitTest.pyTestEnabled": false
+}
