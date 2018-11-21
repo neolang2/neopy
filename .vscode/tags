@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+EXTENSION	../src/constants.py	/^EXTENSION = 'nl'$/;"	kind:variable	line:1
+Lexer	../src/compiler/lexer.py	/^class Lexer:$/;"	kind:class	line:29
+TOK_EOF	../src/compiler/lexer.py	/^    TOK_EOF = -1,$/;"	kind:variable	line:9
+TOK_EXTERN	../src/compiler/lexer.py	/^    TOK_EXTERN = -3,$/;"	kind:variable	line:11
+TOK_FUNC	../src/compiler/lexer.py	/^    TOK_FUNC = -2,$/;"	kind:variable	line:10
+TOK_IDENTIFIER	../src/compiler/lexer.py	/^    TOK_IDENTIFIER = -4,$/;"	kind:variable	line:12
+TOK_NUMBER	../src/compiler/lexer.py	/^    TOK_NUMBER = -5,$/;"	kind:variable	line:13
+TestAddition	../src/tests/test_addition.py	/^class TestAddition(unittest.TestCase):$/;"	kind:class	line:4
+TestArgParser	../src/tests/test_argparser.py	/^class TestArgParser(unittest.TestCase):$/;"	kind:class	line:9
+TestArgParser	../src/tests/test_lexer.py	/^class TestArgParser(unittest.TestCase):$/;"	kind:class	line:7
+Token	../src/compiler/lexer.py	/^class Token:$/;"	kind:class	line:18
+TokenKind	../src/compiler/lexer.py	/^class TokenKind(Enum):$/;"	kind:class	line:8
+UNITTEST_FILENAME_LENGTH	../src/constants.py	/^UNITTEST_FILENAME_LENGTH = 10$/;"	kind:variable	line:3
+__compile_file	../src/compiler/handler.py	/^def __compile_file(file_pointer):$/;"	kind:function	line:6
+__eq__	../src/compiler/lexer.py	/^    def __eq__(self, other):$/;"	kind:member	line:23
+__getChar	../src/compiler/lexer.py	/^    def __getChar(self):$/;"	kind:member	line:37
+__get_path	../src/tests/test_lexer.py	/^    def __get_path(self, filename):$/;"	kind:member	line:8
+__init__	../src/compiler/lexer.py	/^    def __init__(self):$/;"	kind:member	line:30
+__init__	../src/compiler/lexer.py	/^    def __init__(self, kind, metadata):$/;"	kind:member	line:19
+__init__.py	../src/compiler/__init__.py	1;"	kind:file	line:1
+__init__.py	../src/tests/__init__.py	1;"	kind:file	line:1
+__random_filename	../src/tests/test_argparser.py	/^    def __random_filename(self):$/;"	kind:member	line:10
+_getToken	../src/compiler/lexer.py	/^    def _getToken(self):$/;"	kind:member	line:74
+_is_identifier_beginning	../src/compiler/lexer.py	/^    def _is_identifier_beginning(self, in_char: str):$/;"	kind:member	line:67
+_is_number_beginning	../src/compiler/lexer.py	/^    def _is_number_beginning(self, in_char: str):$/;"	kind:member	line:61
+_is_valid_identifier_char	../src/compiler/lexer.py	/^    def _is_valid_identifier_char(self, in_char: str):$/;"	kind:member	line:70
+_is_valid_number_char	../src/compiler/lexer.py	/^    def _is_valid_number_char(self, in_char: str):$/;"	kind:member	line:64
+_is_whitespace	../src/compiler/lexer.py	/^    def _is_whitespace(self, in_char: str):$/;"	kind:member	line:58
+compile_files	../src/compiler/handler.py	/^def compile_files(fp_list):$/;"	kind:function	line:1
+constants.py	../src/constants.py	1;"	kind:file	line:1
+handler.py	../src/compiler/handler.py	1;"	kind:file	line:1
+lex	../src/compiler/lexer.py	/^    def lex(self, filename=None, in_string=None):$/;"	kind:member	line:41
+lexer.py	../src/compiler/lexer.py	1;"	kind:file	line:1
+main.py	../src/main.py	1;"	kind:file	line:1
+mock_open	../src/tests/test_argparser.py	/^        def mock_open(in_filename, in_mode, *args, **kwargs):$/;"	kind:function	line:20
+parse_args	../src/main.py	/^def parse_args(args):$/;"	kind:function	line:9
+parsed_args	../src/main.py	/^    parsed_args = parse_args(sys.argv[1:])$/;"	kind:variable	line:18
+test_add_twos	../src/tests/test_addition.py	/^    def test_add_twos(self):$/;"	kind:member	line:5
+test_addition.py	../src/tests/test_addition.py	1;"	kind:file	line:1
+test_argparser.py	../src/tests/test_argparser.py	1;"	kind:file	line:1
+test_lexer.py	../src/tests/test_lexer.py	1;"	kind:file	line:1
+test_lexer_on_inputfile	../src/tests/test_lexer.py	/^    def test_lexer_on_inputfile(self):$/;"	kind:member	line:11
+test_six_files	../src/tests/test_argparser.py	/^    def test_six_files(self):$/;"	kind:member	line:14
