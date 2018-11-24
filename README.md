@@ -1,5 +1,5 @@
 # python-compiler
-Compiler for neolang to x86 assembly written in python
+Compiler for neolang to llvm IR written in python
 
 # Testing
 Unit tests use the [unittest](https://docs.python.org/3/library/unittest.html) built in library.
