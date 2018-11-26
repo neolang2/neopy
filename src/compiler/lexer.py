@@ -19,12 +19,13 @@ class Token(lex.LexToken):
 keywords = {
     'byte': 'BYTE',
     'int': 'INT',
+    'void': 'VOID',
     'return': 'RETURN',
     'func': 'FUNC',
 }
 
 tokens = [
-    'NUMBER', 'PLUS', 'MINUS', 'MULT', 'DIVIDE', 'LPAREN',
+    'NUMBER', 'PLUS', 'MINUS', 'MULT', 'DIVIDE', 'MOD', 'LPAREN',
     'RPAREN', 'ID', 'COMMA', 'SEMICOLON', 'LBRACE',
     'RBRACE', 'ASSIGN',
 ] + list(keywords.values())
@@ -33,6 +34,7 @@ t_PLUS = r'\+'
 t_MINUS = r'-'
 t_MULT = r'\*'
 t_DIVIDE = r'/'
+t_MOD = r'%'
 t_LPAREN = r'\('
 t_RPAREN = r'\)'
 t_COMMA = r','
@@ -40,7 +42,6 @@ t_SEMICOLON = r';'
 t_LBRACE = r'\{'
 t_RBRACE = r'\}'
 t_ASSIGN = r'='
-
 
 t_ignore = ' \t'
 
