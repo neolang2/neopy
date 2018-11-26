@@ -33,12 +33,12 @@ return statement
 function call
 # math expression
 '''
-start = 'compilation unit'
+start = 'compilation_unit'
 
 
-def p_start(p):
-    '''compilation unit : variable_declaration'''
-    p[0] = Node("start", leaf=p[1])
+def p_compilation_unit(p):
+    '''compilation_unit : variable_declaration'''
+    p[0] = Node("compilation_unit", leaf=p[1])
 
 
 def p_primary_expresssion_1(p):
