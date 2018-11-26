@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python   
 import compiler.lexer as lexer
 import ply.yacc as yacc
 
@@ -26,7 +26,6 @@ class Node:
 
 '''
 # varriable assignment
-extern statement
 function statement
 function decleration
 code block
@@ -34,11 +33,11 @@ return statement
 function call
 # math expression
 '''
-start = 'start'
+start = 'compilation unit'
 
 
 def p_start(p):
-    '''start : variable_declaration'''
+    '''compilation unit : variable_declaration'''
     p[0] = Node("start", leaf=p[1])
 
 
