@@ -1,4 +1,4 @@
-#!/usr/bin/env python   
+#!/usr/bin/env python
 import compiler.lexer as lexer
 import ply.yacc as yacc
 
@@ -63,13 +63,13 @@ def p_postfix_expression_3(p):
 
 
 def p_argument_list_1(p):
-    '''argument_list : ID'''
-    p[0] = Node("postfix_expression", [], p[1])
+    '''argument_list : postfix_expression'''
+    p[0] = Node("argument_list", [], p[1])
 
 
 def p_argument_list_2(p):
-    '''argument_list : argument_list COMMA ID'''
-    p[0] = Node("postfix_expression", [p[1],p[2]], p[3])
+    '''argument_list : argument_list COMMA postfix_expression'''
+    p[0] = Node("argument_list", [p[1], p[2]], p[3])
 
 
 def p_expression_1(p):
@@ -79,11 +79,10 @@ def p_expression_1(p):
 
 def p_expression_2(p):
     ''' expression : expression PLUS expression
-            | expression MINUS expression
-            | expression MULT expression
-            | expression DIVIDE expression
-            | expression MOD expression
-             '''
+                   | expression MINUS expression
+                   | expression MULT expression
+                   | expression DIVIDE expression
+                   | expression MOD expression'''
     p[0] = Node("expression", [p[3], p[1]], p[2])
 
 
