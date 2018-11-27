@@ -65,18 +65,18 @@ def p_postfix_expression_2(p):
 
 
 def p_postfix_expression_3(p):
-    '''postfix_expression : postfix_expression LPAREN argument_list RPAREN'''
+    '''postfix_expression : postfix_expression LPAREN argument_expression_list RPAREN'''
     p[0] = Node("postfix_expression", p[1:])
 
 
-def p_argument_list_1(p):
-    '''argument_list : postfix_expression'''
-    p[0] = Node("argument_list", p[1:])
+def p_argument_expression_list_1(p):
+    '''argument_expression_list : postfix_expression'''
+    p[0] = Node("argument_expression_list", p[1:])
 
 
-def p_argument_list_2(p):
-    '''argument_list : argument_list COMMA postfix_expression'''
-    p[0] = Node("argument_list", p[1:])
+def p_argument_expression_list_2(p):
+    '''argument_expression_list : argument_expression_list COMMA postfix_expression'''
+    p[0] = Node("argument_expression_list", p[1:])
 
 
 def p_math_expression_1(p):
@@ -86,10 +86,10 @@ def p_math_expression_1(p):
 
 def p_math_expression_2(p):
     ''' math_expression : math_expression PLUS math_expression
-                   | math_expression MINUS math_expression
-                   | math_expression MULT math_expression
-                   | math_expression DIVIDE math_expression
-                   | math_expression MOD math_expression'''
+                        | math_expression MINUS math_expression
+                        | math_expression MULT math_expression
+                        | math_expression DIVIDE math_expression
+                        | math_expression MOD math_expression'''
     p[0] = Node("math_expression", p[1:])
 
 
@@ -113,11 +113,6 @@ def p_type(p):
             | INT
             | VOID'''
     p[0] = Node("type", p[1:])
-
-
-# def p_assignment_expression(p):
-#     '''assignment_expression : math_expression'''
-#     p[0] = Node("assignment_expression", p[1:])
 
 
 def p_declaration_1(p):
@@ -175,6 +170,16 @@ def p_declarator_3(p):
     p[0] = Node("declarator", p[1:])
 
 
+def p_declarator_4(p):
+    '''declarator : declarator LPAREN parameter_list RPAREN'''
+    p[0] = Node("declarator", p[1:])
+
+
+def p_declarator_5(p):
+    '''declarator : declarator LPAREN identifier_list RPAREN'''
+    p[0] = Node("declarator", p[1:])
+
+
 def p_function_definition_1(p):
     '''function_definition : FUNC ID LPAREN RPAREN type compound_statement'''
     p[0] = Node("function_definition", p[1:])
@@ -185,13 +190,33 @@ def p_function_definition_2(p):
     p[0] = Node("function_definition", p[1:])
 
 
-def p_parameter_list(p):
-    '''parameter_list : type ID'''
+def p_identifier_list_1(p):
+    '''identifier_list : ID'''
+    p[0] = Node("identifier_list", p[1:])
+
+
+def p_identifier_list_2(p):
+    '''identifier_list : identifier_list COMMA ID'''
+    p[0] = Node("identifier_list", p[1:])
+
+
+def p_parameter_declaration_1(p):
+    '''parameter_declaration : declaration_specifier'''
+    p[0] = Node("parameter_declaration", p[1:])
+
+
+def p_parameter_declaration_2(p):
+    '''parameter_declaration : declaration_specifier declarator'''
+    p[0] = Node("parameter_declaration", p[1:])
+
+
+def p_parameter_list_1(p):
+    '''parameter_list : parameter_declaration'''
     p[0] = Node("parameter_list", p[1:])
 
 
 def p_parameter_list_2(p):
-    '''parameter_list : parameter_list COMMA parameter_list'''
+    '''parameter_list : parameter_list COMMA parameter_declaration'''
     p[0] = Node("parameter_list", p[1:])
 
 
@@ -282,8 +307,6 @@ def p_error(p):
     if not p:
         print("End of File!")
         return
-
-# Build the grammar
 
 
 plyparser = yacc.yacc()
