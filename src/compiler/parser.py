@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import compiler.lexer as lexer
 import ply.yacc as yacc
-
+import anytree
 # Get the token map
 tokens = lexer.tokens
 
@@ -11,21 +11,22 @@ precedence = (
 )
 
 
-class Node:
+class Node(anytree.Node):
     def __init__(self, type, children=None):
-        self.type = type
+        self.name = type
+        tmp_children = []
         if children:
-            self.children = children
-        else:
-            self.children = []
+            for child in children:
+                if isinstance(child, Node):
+                    tmp_children.append(child)
+                else:
+                    tmp_children.append(Node(child))
+        self.children = tmp_children
 
-    def __str__(self, level=0):
-        ret = " "*level+repr(self.type)+"\n"
-        for child in self.children:
-            if isinstance(child, Node):
-                ret += child.__str__(level+1)
-            else:
-                ret += "  "*level+str(child)+"\n"
+    def __str__(self):
+        ret = ""
+        for pre, _, node in anytree.RenderTree(self):
+            ret += "%s%s" % (pre, node.name) + "\n"
         return ret
 
 
