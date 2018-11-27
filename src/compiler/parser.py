@@ -227,18 +227,24 @@ def p_compound_statement_1(p):
 
 
 def p_compound_statement_2(p):
-    '''compound_statement : LBRACE statement_list RBRACE'''
+    '''compound_statement : LBRACE compound_list RBRACE'''
     p[0] = Node("compound_statement", p[1:])
 
 
-def p_compound_statement_3(p):
-    '''compound_statement : LBRACE declaration_list RBRACE'''
-    p[0] = Node("compound_statement", p[1:])
+def p_compound_statement_inner_1(p):
+    '''compound_statement_inner : statement_list
+                                | declaration_list'''
+    p[0] = Node("compound_list", p[1:])
 
 
-def p_compound_statement_4(p):
-    '''compound_statement : LBRACE declaration_list statement_list RBRACE'''
-    p[0] = Node("compound_statement", p[1:])
+def p_compound_list_1(p):
+    '''compound_list : compound_statement_inner'''
+    p[0] = Node("compound_list", p[1:])
+
+
+def p_compound_list_2(p):
+    '''compound_list : compound_list compound_statement_inner'''
+    p[0] = Node("compound_list", p[1:])
 
 
 def p_statement_list_1(p):
