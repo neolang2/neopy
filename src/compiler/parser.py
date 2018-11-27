@@ -19,29 +19,16 @@ class Node:
         else:
             self.children = []
 
-    # def __str__(self):
-    #     return "({}, [{}])".format(self.type, ', '.join(str(child) for child in self.children))
     def __str__(self, level=0):
-        ret = "  "*level+repr(self.type)+"\n"
+        ret = " "*level+repr(self.type)+"\n"
         for child in self.children:
-            # if not ret == "":
-                # ret += " "
             if isinstance(child, Node):
                 ret += child.__str__(level+1)
             else:
-                ret +=  "  "*level+str(child)+"\n"
+                ret += "  "*level+str(child)+"\n"
         return ret
 
 
-'''
-# varriable assignment
-# function statement
-function decleration
-code block
-return statement
-# function call
-# math expression
-'''
 start = 'compilation_unit'
 
 
