@@ -3,6 +3,9 @@ byte y = 3;
 func myFunc(int numb, byte otherval) int {
     return numb + 1;
 }
+func otherExample(int n1) int {
+    return n1 + 5;
+}
 func main() int {
     int z = myFunc(x,y);
     z = ((z + 2) % 3) + 4;
